@@ -1,3 +1,6 @@
+
+
+// Main Images SlideShow 
 let bg=document.querySelector("#main");
 let snm=document.getElementById("snm");
 let bga=snm.getElementsByTagName("A");
@@ -28,6 +31,7 @@ function slideBg(){
     
 }
 // setInterval(slideBg,5000);
+
 
 //Search Section
 let srchBx=document.getElementById("srchSec");
@@ -64,7 +68,7 @@ srch.addEventListener("click",function(){
 
 
 
-// logIN
+// Users Button to LogIN and Sign UP 
 let logBx=document.getElementById("Users");
 let logBtn=document.querySelector("#nicons i:nth-child(2)");
 let clseBtn=document.querySelector("#lcontent>i");
@@ -89,7 +93,7 @@ clseBtn.addEventListener("click",function(){
 })
 
 
-// LogIn and SignUp 
+// LogIn and SignUp tabs
 let cbtn=document.querySelector("#lbtn a");
 let lbx=document.getElementById("logIn");
 let lbtn=document.querySelector("#sbtn a");
@@ -120,6 +124,7 @@ lbtn.addEventListener("click",function(){
 
 // })
 
+// Navbar Elements 
 let tbtn=document.querySelectorAll("#nlft a");
 let tab=document.getElementsByClassName("tab");
 let tabC=document.getElementsByClassName("tabC")
