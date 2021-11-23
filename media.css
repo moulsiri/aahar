@@ -152,7 +152,7 @@
     padding: 0px 20px;
 
     }
-    .fimg:nth-child(1){
+    /* .fimg:nth-child(1){
         width: 100%;
         height: 60vh;
     }
@@ -175,8 +175,18 @@
     .fimg:nth-child(6){
         width: 100%;
         height: 60vh;
+    } */
+    /* .fov{
+
+    } */
+    .fimg{
+        height: calc(100vh/6);
+        background-size: cover;
+        margin-top: .2em;
+        width:100%;
+    
     }
-    #fbtm{
+    #fbtm{ 
         flex-direction: column;
     padding: 0px 20px;
 

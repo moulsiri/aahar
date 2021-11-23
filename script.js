@@ -30,17 +30,19 @@ function slideBg(){
     i = (i + 1) % bga.length;
     
 }
-// setInterval(slideBg,5000);
+setInterval(slideBg,5000);
 
 
 //Search Section
 let srchBx=document.getElementById("srchSec");
 let srch=document.getElementById("srch");
+let srchCn=document.getElementById("srchCn");
 let flag=1;
 let media=window.matchMedia("(max-width:500px)")
 srch.addEventListener("click",function(){
     if(srchBx.style.height){
         srchBx.style.height=null;
+        srchCn.style.display="none";
         // srchBx.style.display="initial";
         srch.style.transform="initial"
         srch.style.left="6%";
@@ -51,6 +53,8 @@ srch.addEventListener("click",function(){
     }
     else{
         srchBx.style.height="60vh";
+        srchCn.style.display="initial";
+
        
         if(media.matches){
         
@@ -66,6 +70,22 @@ srch.addEventListener("click",function(){
     }
 })
 
+// Veg and non-Veg Option 
+let vgbtn=document.getElementById("vg");
+let nvgbtn=document.getElementById("nvg");
+let vgSec=document.getElementById("vgSec");
+let nvgSec=document.getElementById("nvgSec");
+vgbtn.addEventListener("click",function(){
+    vgSec.style.left="0";
+    nvgSec.style.right="-100%";
+
+
+})
+nvgbtn.addEventListener("click",function(){
+    vgSec.style.left="-100%";
+    nvgSec.style.right="0";
+
+})
 
 
 // Users Button to LogIN and Sign UP 
@@ -125,32 +145,54 @@ lbtn.addEventListener("click",function(){
 // })
 
 // Navbar Elements 
-let tbtn=document.querySelectorAll("#nlft a");
+let tbtn=document.querySelectorAll("#nlft>a");
 let tab=document.getElementsByClassName("tab");
 let tabC=document.getElementsByClassName("tabC")
 for(let i=1;i<tbtn.length-1;i++){
     tbtn[i].addEventListener("click",function(){
         if(flag===1){
-            tab[i].style.width="50vw";
-            tabC[i].style.display="initial";
+            tab[i-1].style.width="50vw";
+            tabC[i-1].style.display="initial";
+            console.log(tbtn[i]);
             flag=0;
         }
         else{
-            tab[i].style.width="0";
-            tabC[i].style.display="none";
+            tab[i-1].style.width="0";
+            tabC[i-1].style.display="none";
             flag=1;
         }
     })
 }
-tbtn[3].addEventListener("click",function(){
+tbtn[2].addEventListener("click",function(){
     if(flag===1){
-            tabC[2].style.display="initial";
-            tab[2].style.width="50vw";
+            tabC[1].style.display="initial";
+            tab[1].style.width="50vw";
+            // console.log(tbtn[3]);
+
         flag=0;
     }
     else{
-            tabC[2].style.display="none";
-            tab[2].style.width="0";
+            tabC[1].style.display="none";
+            tab[1].style.width="0";
         flag=1;
     }
 })
+
+
+// Footer Images 
+var fbg=document.getElementsByClassName("fimg");
+var fov = document.getElementsByClassName("fov");
+for(let i=0;i<fov.length;i++){
+
+    fov[i].addEventListener("mouseover",function(){
+      
+
+        fov[i].style.opacity=1;
+        fbg[i].style.backgroundSize="100%";
+    })
+    fov[i].addEventListener("mouseout",function(){
+        fov[i].style.opacity=0;
+        fbg[i].style.backgroundSize="120%";
+
+    })
+}
